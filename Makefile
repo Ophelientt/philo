@@ -2,10 +2,10 @@ NAME = philo
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -I$(LIBFT_PATH)
 
-LIBFT_PATH = libft/
+LIBFT_PATH = Libft/
 LIBFT_LIB = $(LIBFT_PATH)libft.a
 
-SRCS = philo.c \
+SRCS = messages.c utils.c main.c initialisation.c free.c mutex.c philo.c\
 
 OBJS = $(SRCS:.c=.o)
 
