@@ -5,7 +5,7 @@ CFLAGS = -Wall -Werror -Wextra -I$(LIBFT_PATH)
 LIBFT_PATH = Libft/
 LIBFT_LIB = $(LIBFT_PATH)libft.a
 
-SRCS = messages.c utils.c main.c initialisation.c free.c mutex.c philo.c\
+SRCS = monitor.c messages.c utils.c main.c initialisation.c free.c mutex.c philo.c\
 
 OBJS = $(SRCS:.c=.o)
 

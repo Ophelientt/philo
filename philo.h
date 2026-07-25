@@ -18,6 +18,7 @@ typedef struct s_philo
     pthread_mutex_t *left_fork;
     pthread_mutex_t *right_fork;
     int nb_meal;
+    pthread_mutex_t mutex_nb_meal;
     long long last_meal;
     pthread_mutex_t mutex_last_meal;
     t_rules *rules;
@@ -60,5 +61,8 @@ void    ft_message_think(t_philo *philo);
 void    ft_message_sleep(t_philo *philo);
 void    ft_message_eat(t_philo *philo);
 void    ft_message_fork(t_philo *philo);
+int    ft_usleep(t_philo *philo, long long time_to);
+void ft_monitor(t_rules *rules);
+void ft_destroy_nb_meal(t_rules *rules, int i);
 
 #endif

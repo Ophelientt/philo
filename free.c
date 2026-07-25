@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: onotto <onotto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 13:48:14 by onotteau          #+#    #+#             */
-/*   Updated: 2026/07/23 15:43:43 by onotto           ###   ########.fr       */
+/*   Updated: 2026/07/25 19:25:13 by onotto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,18 @@ void ft_destroy_last_meal(t_rules *rules, int i)
         j++;
     } 
 }
+void ft_destroy_nb_meal(t_rules *rules, int i)
+{
+    int j;
+    
+    j = 0;
+    while (j < i)
+    {
+        pthread_mutex_destroy(&rules->philos[j].mutex_nb_meal);
+        j++;
+    } 
+}
+
 void	ft_free_allocations(t_rules *rules)
 {
 	if (rules->philos)
