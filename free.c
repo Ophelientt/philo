@@ -12,48 +12,49 @@
 
 #include "philo.h"
 
-int ft_error_message(void)
+int	ft_error_message(void)
 {
-    write(2, "Error\n", 6);
-    return (1);
+	write(2, "Error\n", 6);
+	return (1);
 }
 
-void ft_destroy_forks(t_rules *rules, int i)
+void	ft_dst_forks(t_rules *rules, int i)
 {
-    int j;
+	int	j;
 
-    j = 0;
-    while (j < i)
-    {
-        pthread_mutex_destroy(&rules->forks[i]);
-        j++;
-    }
+	j = 0;
+	while (j < i)
+	{
+		pthread_mutex_destroy(&rules->forks[i]);
+		j++;
+	}
 }
 
-void ft_destroy_last_meal(t_rules *rules, int i)
+void	ft_dst_last_meal(t_rules *rules, int i)
 {
-    int j;
-    
-    j = 0;
-    while (j < i)
-    {
-        pthread_mutex_destroy(&rules->philos[j].mutex_last_meal);
-        j++;
-    } 
-}
-void ft_destroy_nb_meal(t_rules *rules, int i)
-{
-    int j;
-    
-    j = 0;
-    while (j < i)
-    {
-        pthread_mutex_destroy(&rules->philos[j].mutex_nb_meal);
-        j++;
-    } 
+	int	j;
+
+	j = 0;
+	while (j < i)
+	{
+		pthread_mutex_destroy(&rules->philos[j].mutex_last_meal);
+		j++;
+	}
 }
 
-void	ft_free_allocations(t_rules *rules)
+void	ft_destroy_nb_meal(t_rules *rules, int i)
+{
+	int	j;
+
+	j = 0;
+	while (j < i)
+	{
+		pthread_mutex_destroy(&rules->philos[j].mutex_nb_meal);
+		j++;
+	}
+}
+
+void	ft_free_alloc(t_rules *rules)
 {
 	if (rules->philos)
 	{

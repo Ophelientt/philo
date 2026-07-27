@@ -18,7 +18,6 @@ int	main(int ac, char **av)
 
 	if (ft_check_arg(ac, av) != 0)
 		return (ft_error_message());
-
 	if (ft_init_values_rules(&rules, ac, av) != 0)
 		return (ft_error_message());
 	if (ft_allocations(&rules) != 0)

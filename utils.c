@@ -14,14 +14,14 @@
 
 long long	ft_atoll(const	char *str)
 {
-	int	i;
+	int			i;
 	long long	result;
 
 	i = 0;
 	result = 0;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-        if (result > (LLONG_MAX - (str[i] - '0')) / 10)
+		if (result > (LLONG_MAX - (str[i] - '0')) / 10)
 		{
 			return (LLONG_MAX);
 		}
@@ -31,10 +31,10 @@ long long	ft_atoll(const	char *str)
 	return (result);
 }
 
-long long ft_get_time(void)
+long long	ft_get_time(void)
 {
-    struct timeval	tv;
-    
-    gettimeofday(&tv, NULL);
-    return ((tv.tv_sec * 1000) + (tv.tv_usec / 1000));
+	struct timeval	tv;
+
+	gettimeofday(&tv, NULL);
+	return ((tv.tv_sec * 1000) + (tv.tv_usec / 1000));
 }
